@@ -1,0 +1,12 @@
+# Disables tracking of JetBrains Files
+**/.idea/**
+
+# Disables tracking of Nuke logs
+**/temp/**
+
+# Disables tracking of build output
+**/bin/**
+**/obj/**
+
+# Disables tracking of published output
+**/pub/**
