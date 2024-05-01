@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Dokusoft.Ui.View.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModel="clr-namespace:Dokusoft.Ui.ViewModel"
+             mc:Ignorable="d"
+             d:DesignHeight="480" d:DesignWidth="640"
+             d:DataContext="{d:DesignInstance viewModel:MainViewViewModel}">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../Styles/Styles.xaml"/>
+    </UserControl.Resources>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="16"/>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="64"/>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="32"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="120"/>
+        </Grid.ColumnDefinitions>
+        
+        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Content="Select an output folder for the JSON File:"/>
+        
+        <Label Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Content="Path:"/>
+        <TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Text="{Binding FilePath}"/>
+        <Button Grid.Row="2" Grid.Column="2" Command="{Binding OpenFolderPickerCommand}" Content="Choose Folder"/>
+        
+        <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="Select a COM Port:" />
+        
+        <Label Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" Content="Port:"/>
+        <ComboBox Grid.Row="5" Grid.Column="1" SelectedItem="{Binding SelectedComPort}" ItemsSource="{Binding ComPorts}"/>
+        <Button Grid.Row="5" Grid.Column="2" Command="{Binding RefreshComPortCommand}" Content="Refresh"/>
+        
+        <Grid Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Command="{Binding ReadDataCommand}" Content="Read Data"/>
+            <Button Grid.Column="1" Command="{Binding SaveToFileCommand}" Content="Save To File"/>
+        </Grid>
+        
+        <ProgressBar Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3"/>
+    </Grid>
+</UserControl>

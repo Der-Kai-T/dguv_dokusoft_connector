@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Dokusoft.IO</RootNamespace>
+        <AssemblyName>Dokusoft.IO</AssemblyName>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Dokusoft.Data\Dokusoft.Data.csproj" />
+        <PackageReference Include="System.IO.Ports" Version="8.0.0" />
+    </ItemGroup>
+
+</Project>

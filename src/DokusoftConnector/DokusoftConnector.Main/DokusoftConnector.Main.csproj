@@ -8,4 +8,8 @@
         <UseWPF>true</UseWPF>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Dokusoft.Ui\Dokusoft.Ui.csproj" />
+    </ItemGroup>
+
 </Project>
